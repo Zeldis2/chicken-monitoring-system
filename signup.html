@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="stylesheet" href="css/signup.css" />
+  <link rel="stylesheet" href="css/media.css" />
+  
+  <title>THESIS — Sign Up</title>
+</head>
+<body>
+<main class="page">
+<div class="sky">
+<div class="cloud c1"></div>
+<div class="cloud c2"></div>
+</div>
+<section class="card">
+<header class="brand">
+<div class="chicken" aria-hidden="true"><svg viewbox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" role="img" class="chicken-svg"> <ellipse cx="60" cy="58" rx="36" ry="26" fill="#FFD966"></ellipse> <circle cx="80" cy="48" r="6" fill="#333"></circle> <path d="M55 40 l-12 -12 l6 0 z" fill="#F7941E"></path> <path d="M75 40 l12 -12 l-6 0 z" fill="#F7941E" transform="scale(-1,1) translate(-150,0)"></path> <ellipse cx="44" cy="66" rx="6" ry="4" fill="#FFF0D6"></ellipse> </svg></div>
+<h1>🐤🐓🐔</h1>
+<p class="subtitle">Create Account &amp; Setup Farm</p>
+</header>
+
+<form id="signupForm" class="login-form">
+    <div class="section-header">👤 Owner Details</div>
+    
+    <label for="fullname">Full Name</label> 
+    <input type="text" id="fullname" name="fullname" placeholder="Juan Dela Cruz" required="" /> 
+    
+    <label for="email">Email Address</label> 
+    <input type="email" id="email" name="email" placeholder="juandelacruz@gmail.com" required="" /> 
+    
+    <label for="phone">Phone Number</label> 
+    <input type="tel" id="phone" name="phone" placeholder="09123456789" required="" />
+    
+    <div class="row">
+        <div class="col">
+            <label for="username">Username</label> 
+            <input type="text" id="username" name="username" required="" />
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col">
+            <label for="password">Password</label> 
+            <input id="password" name="password" type="password" required="" />
+        </div>
+        <div class="col">
+            <label for="confirm_password">Confirm</label> 
+            <input id="confirm_password" name="confirm_password" type="password" required="" />
+        </div>
+    </div>
+    
+    <div class="section-header">🐔 Farm Details</div>
+    
+    <label for="farm_name">Farm Name</label> 
+    <input type="text" id="farm_name" name="farm_name" placeholder="My Chicken Farm" required="" /> 
+    
+    <label for="farm_location">Farm Address</label> 
+    <textarea id="farm_location" name="farm_location" placeholder="Barangay, City, Province"></textarea> 
+    
+    <label for="farm_type">Type of Chicken</label>
+    <select id="farm_type" name="farm_type">
+        <option value="Broiler">Broiler (Meat)</option>
+        <option value="Layer">Layer (Eggs)</option>
+        <option value="Backyard">Backyard / Native</option>
+    </select>
+    
+    <div class="row">
+        <div class="col">
+            <label for="chicken_count">Capacity</label> 
+            <input type="number" id="chicken_count" name="chicken_count" value="500" />
+        </div>
+        <div class="col">
+            <label for="units">Units</label>
+            <select id="units" name="units">
+                <option value="metric">Metric (kg/cm)</option>
+                <option value="imperial">Imperial (lbs/in)</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="section-header">🔔 Settings</div>
+    
+    <div class="checkbox-group">
+        <label><input type="checkbox" name="notify_sms" checked="checked" /> SMS</label> 
+        <label><input type="checkbox" name="notify_email" checked="checked" /> Email</label> 
+        <label><input type="checkbox" name="enable_system" checked="checked" /> <b>Alerts</b></label>
+    </div>
+    
+    <div class="actions">
+        <a href="Login.html" style="text-decoration: none; color: #f7941e; font-weight: bold; font-size: 0.9rem;">← Login</a> 
+        <button type="submit" class="btn">Register All</button>
+    </div>
+    
+    <p class="note" id="note" aria-live="polite"></p>
+</form>
+
+<footer class="decor">
+<div class="egg">🥚</div>
+<div class="egg">🥚</div>
+<div class="egg">🥚</div>
+</footer>
+</section>
+</main>
+
+<script src="js/signup.js"></script>
+
+</body>
+</html>

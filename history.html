@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>History — THESIS</title>
+  
+  <link rel="stylesheet" href="css/Navbar.css" />
+  <link rel="stylesheet" href="css/history.css" />
+  <style>
+      .type-badge { padding: 4px 10px; border-radius: 12px; font-size: 0.85rem; background: #e2e8f0; color: #1e293b; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+<header class="topnav">
+  <div class="container nav-inner">
+    <a class="brand" href="Fpage.html">🐤🐓🐔</a>
+    <button id="menuBtn" class="menu-btn">☰</button>
+    <nav id="siteNav" class="nav-links">
+      <a href="Fpage.html">Home</a>
+      <a href="monitoring.html">Monitoring</a>
+      <a href="history.html" class="active">History</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <div class="page-header">
+      <h1>History & Reports</h1>
+      <button id="downloadBtn" class="btn-download">
+          <span>📄</span> Download Excel Report
+      </button>
+  </div>
+
+  <table style="width: 100%;">
+    <thead>
+      <tr>
+        <th width="20%">Time</th>
+        <th width="10%">Type</th>
+        <th width="10%">Zone</th>
+        <th width="15%">Health Status</th>
+        <th width="20%">Symptoms</th>
+        <th width="25%">Remarks</th>
+      </tr>
+    </thead>
+    <tbody id="recordsBody">
+      <tr><td colspan="6" style="text-align:center; padding:20px;">Loading records...</td></tr>
+    </tbody>
+  </table>
+</main>
+
+<script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
+<script src="js/history.js?v=4"></script>
+
+<script>
+    document.getElementById("menuBtn")?.addEventListener("click", () => {
+        document.getElementById("siteNav").classList.toggle("open");
+    });
+</script>
+
+</body>
+</html>

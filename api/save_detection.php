@@ -4,6 +4,12 @@
 header("Content-Type: application/json");
 require "db.php";
 
+// 🔥 Pilitin ang Database (MySQL) na gumamit ng Philippine Time (UTC+8)
+$conn->query("SET time_zone = '+08:00';");
+
+// 🔥 I-set din ang PHP para parehas sila
+date_default_timezone_set('Asia/Manila');
+
 // Tumatanggap ng JSON data
 $inputJSON = file_get_contents('php://input');
 $input = json_decode($inputJSON, true);

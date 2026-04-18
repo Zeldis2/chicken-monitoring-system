@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Settings — THESIS</title>
+<link rel="stylesheet" href="css/Navbar.css">
+<link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+
+<header class="topnav">
+<div class="container nav-inner">
+  <a class="brand" href="Fpage.html">🐤🐓🐔</a>
+  <button id="menuBtn" class="menu-btn">☰</button>
+  <nav id="siteNav" class="nav-links">
+    <a href="Fpage.html">Home</a>
+    <a href="monitoring.html">Monitoring</a>
+    <a href="history.html">History</a>
+    <a href="settings.html" class="active">Settings</a>
+  </nav>
+</div>
+</header>
+
+<main class="container">
+<h1>Farm Profile & Settings</h1>
+<p id="msg"></p>
+
+<div class="section">
+<h2>Farm Information</h2>
+<input type="hidden" id="db_id"> <label>Farm Name</label>
+<input type="text" id="farm_name" placeholder="Loading...">
+
+<label>Farm ID</label>
+<input type="text" id="farm_id" readonly style="background:#eee; color:#555; border:1px solid #ccc; padding:10px; width:100%; border-radius:6px; margin-top:4px;">
+
+<label>Farm Type</label>
+<select id="farm_type">
+  <option value="Broiler">Broiler</option>
+  <option value="Layer">Layer</option>
+  <option value="Backyard">Backyard</option>
+</select>
+
+<label>Number of Chickens</label>
+<input type="number" id="number_of_chickens">
+
+<label>Farm Address</label>
+<textarea id="farm_location" rows="3"></textarea>
+</div>
+
+<div class="section">
+<h2>Owner / Account</h2>
+<label>Owner Name</label>
+<input type="text" id="owner_name">
+
+<label>Email</label>
+<input type="email" id="owner_email">
+
+<label>Contact Number</label>
+<input type="text" id="owner_phone">
+
+<label>Username</label>
+<input type="text" id="username" readonly style="background:#e9ecef; cursor: default;">
+</div>
+
+<div class="section">
+<h2>Security</h2>
+<p class="small">Manage your account password.</p>
+
+<button type="button" id="openPassModalBtn" style="background:#333; color:white; margin-bottom:15px;">
+  🔒 Change Password
+</button>
+
+<div class="actions">
+  <button class="save-btn" id="saveBtn">Save Changes</button>
+  <button class="logout-btn" onclick="if(confirm('Logout?')) location.href='Login.html'">Logout</button>
+</div>
+</div>
+
+</main>
+
+<div id="passwordModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" id="closePassModal">&times;</span>
+    <h2 style="color:#F7941E; margin-top:0;">Change Password</h2>
+    
+    <form id="changePassForm">
+      <label>Current Password</label>
+      <input type="password" id="current_password" required placeholder="Enter current password">
+      
+      <label>New Password</label>
+      <input type="password" id="new_password" required placeholder="Min. 6 characters">
+      
+      <label>Confirm New Password</label>
+      <input type="password" id="confirm_new_password" required placeholder="Retype new password">
+      
+      <p id="passMsg" style="text-align:center; font-size:0.9rem; margin-top:10px; font-weight:bold;"></p>
+      
+      <button type="submit" class="btn-submit">Update Password</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/settings.js"></script>
+<script>
+document.getElementById("menuBtn")?.addEventListener("click",()=>document.getElementById("siteNav").classList.toggle("open"));
+</script>
+
+</body>
+</html>

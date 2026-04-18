@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="css/media.css" />
+  <title>THESIS — Login</title>
+</head>
+<body>
+  <main class="page">
+    <div class="sky">
+      <div class="cloud c1"></div>
+      <div class="cloud c2"></div>
+    </div>
+
+    <section class="card">
+      <header class="brand">
+        <div class="chicken" aria-hidden="true">
+          <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg" role="img" class="chicken-svg">
+            <ellipse cx="60" cy="58" rx="36" ry="26" fill="#FFD966" />
+            <circle cx="80" cy="48" r="6" fill="#333" />
+            <path d="M55 40 l-12 -12 l6 0 z" fill="#F7941E" />
+            <path d="M75 40 l12 -12 l-6 0 z" fill="#F7941E" transform="scale(-1,1) translate(-150,0)" />
+            <ellipse cx="44" cy="66" rx="6" ry="4" fill="#FFF0D6" />
+          </svg>
+        </div>
+        <h1>🐤🐓🐔</h1>
+        <p class="subtitle">Thesis Project — Login</p>
+      </header>
+
+      <form id="loginForm" class="login-form" novalidate>
+        <label for="username">Username</label>
+        <input id="username" name="username" autocomplete="username" required />
+
+        <label for="password">Password</label>
+        <div class="password-row">
+          <input id="password" name="password" type="password" autocomplete="current-password" required />
+          <button type="button" id="toggleEye" class="eye" aria-label="Toggle password visibility">👁️</button>
+        </div>
+
+        <div class="actions">
+          <label class="remember"><input type="checkbox" id="remember"> Remember me</label>
+          <button type="submit" class="btn">Log in</button>
+        </div>
+
+        <div style="text-align: center; margin-top: 15px; font-size: 0.9rem;">
+            <span style="color: #666;">Don't have an account?</span>
+            <a href="signup.html" style="color: #F7941E; text-decoration: none; font-weight: bold; margin-left: 5px;">Sign up</a>
+        </div>
+        <p class="note" id="note" aria-live="polite"></p>
+      </form>
+
+      <footer class="decor">
+        <div class="egg">🥚</div>
+        <div class="egg">🥚</div>
+        <div class="egg">🥚</div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="js/login.js"></script> 
+</body>
+</html>

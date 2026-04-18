@@ -1,0 +1,10 @@
+[17-Apr-2026 16:23:07 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'chicgfug_hawk.users' doesn't exist in /home/chicgfug/public_html/api/login.php:11
+Stack trace:
+#0 /home/chicgfug/public_html/api/login.php(11): mysqli->prepare()
+#1 {main}
+  thrown in /home/chicgfug/public_html/api/login.php on line 11
+[17-Apr-2026 16:23:14 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'chicgfug_hawk.users' doesn't exist in /home/chicgfug/public_html/api/login.php:11
+Stack trace:
+#0 /home/chicgfug/public_html/api/login.php(11): mysqli->prepare()
+#1 {main}
+  thrown in /home/chicgfug/public_html/api/login.php on line 11

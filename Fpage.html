@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>THESIS — Front Page</title>
+  
+  <link rel="stylesheet" href="css/Fpage.css" />
+  <link rel="stylesheet" href="css/media.css" />
+</head>
+
+<body>
+  <header class="topnav">
+    <div class="container nav-inner">
+      <a class="brand" href="Fpage.html">🐤🐓🐔 </a>
+      <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">☰</button>
+      <nav id="siteNav" class="nav-links">
+        <a href="Fpage.html" class="active">Home</a>
+        <a href="monitoring.html">Monitoring</a>
+        <a href="history.html">History</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </div>
+  </header>
+
+<main class="container">
+
+<section id="home" class="hero">
+  <div class="hero-left">
+    <h1>Protecting Philippine Chicken Farms from HPAI</h1>
+    <p class="lead">
+      The system combines lightweight monitoring and practical guidance
+      to help farmers, vets, and policymakers reduce the risk and impact of
+      Highly Pathogenic Avian Influenza (HPAI).
+    </p>
+    <div class="hero-cta">
+      <a class="btn" href="#monitoring">View Monitoring</a>
+      <a class="btn ghost" href="#history">Read Reports</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="carousel" id="homeCarousel">
+      <div class="carousel-track">
+        <div class="carousel-slide"><img src="images/chicken1.jpg" alt="Farm view 1"></div>
+        <div class="carousel-slide"><img src="images/chicken2.jpg" alt="Farm view 2"></div>
+        <div class="carousel-slide"><img src="images/chicken3.jpg" alt="Farm view 3"></div>
+      </div>
+      <button class="carousel-btn prev" aria-label="Previous slide">‹</button>
+      <button class="carousel-btn next" aria-label="Next slide">›</button>
+      <div class="carousel-dots" aria-hidden="false"></div>
+    </div>
+  </div>
+</section>
+
+<section id="monitoring" class="info-grid">
+  <article class="card" onclick="openModal('m1')">
+    <h3>Real-time Monitoring</h3>
+    <p>Click to view details</p>
+  </article>
+
+  <article class="card" onclick="openModal('m2')">
+    <h3>Industry Impact</h3>
+    <p>Click to view details</p>
+  </article>
+
+  <article class="card" onclick="openModal('m3')">
+    <h3>Best Practices</h3>
+    <p>Click to view details</p>
+  </article>
+
+  <article class="card" onclick="openModal('m4')">
+    <h3>Resources</h3>
+    <p>Click to view details</p>
+  </article>
+</section>
+
+<section id="history" class="history">
+  <h2>Farm Status & Recommendations</h2>
+  <p>Current health status and recommended actions for San Miguel Poultry.</p>
+  <div class="history-list">
+    <div class="history-item">
+      <strong>Farm:</strong> San Miguel Poultry — <em>Status: Increased alerts</em>
+      <div class="recommendation"><strong>Recommendation:</strong> Increase biosecurity, isolate affected flocks, restrict movement, and notify your veterinarian immediately.</div>
+    </div>
+  </div>
+</section>
+
+<section id="settings" class="settings">
+  <h2>Settings</h2>
+  <p>Configure alert thresholds, add farm locations, and manage user access.</p>
+  <div class="settings-grid">
+    <div class="small-card">Alerts</div>
+    <div class="small-card">Farms</div>
+    <div class="small-card">Users</div>
+    <div class="small-card">Integrations</div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© CHICKENARIUM — Research project on HPAI and poultry resilience in the Philippines.</p>
+    <p>Contact: <a href="mailto:team@chickenarium.local">team@chickenarium.local</a></p>
+  </div>
+</footer>
+
+<div id="m1" class="modal" onclick="closeModal(event)">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">×</span>
+    <h2>Real-time Monitoring</h2>
+    <p>
+      Uses AI-based vocal analysis and camera monitoring to detect
+      early symptoms of HPAI in chickens.
+    </p>
+  </div>
+</div>
+
+<div id="m2" class="modal" onclick="closeModal(event)">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">×</span>
+    <h2>Industry Impact</h2>
+    <p>
+      Early detection helps reduce economic losses, prevent large-scale
+      outbreaks, and protect food security.
+    </p>
+  </div>
+</div>
+
+<div id="m3" class="modal" onclick="closeModal(event)">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">×</span>
+    <h2>Best Practices</h2>
+    <p>
+      Includes biosecurity measures, isolation protocols, and immediate
+      reporting of suspected chickens.
+    </p>
+  </div>
+</div>
+
+<div id="m4" class="modal" onclick="closeModal(event)">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeModal()">×</span>
+    <h2>Resources</h2>
+    <p>
+      Access official DA, BFAR, and veterinary guidelines related to
+      Avian Influenza prevention and response.
+    </p>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('siteNav');
+    btn.addEventListener('click', ()=> nav.classList.toggle('open'));
+  });
+
+  function openModal(id){
+    document.getElementById(id).style.display = 'flex';
+  }
+  function closeModal(e){
+    if(!e || e.target.classList.contains('modal')){
+      document.querySelectorAll('.modal').forEach(m=>m.style.display='none');
+    }
+  }
+
+  // ====== Simple responsive carousel for homepage ======
+  (function(){
+    const carousel = document.getElementById('homeCarousel');
+    if(!carousel) return;
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prev = carousel.querySelector('.prev');
+    const next = carousel.querySelector('.next');
+    const dotsContainer = carousel.querySelector('.carousel-dots');
+    let current = 0;
+
+    slides.forEach((s,i)=>{
+      const btn = document.createElement('button');
+      btn.className = 'dot';
+      if(i===0) btn.classList.add('active');
+      btn.addEventListener('click', ()=> goTo(i));
+      dotsContainer.appendChild(btn);
+    });
+
+    function update(){
+      track.style.transform = `translateX(${-current*100}% )`;
+      Array.from(dotsContainer.children).forEach((b,i)=> b.classList.toggle('active', i===current));
+    }
+    function goTo(i){ current = (i + slides.length) % slides.length; update(); }
+
+    prev.addEventListener('click', ()=> goTo(current-1));
+    next.addEventListener('click', ()=> goTo(current+1));
+
+    let autoplay = setInterval(()=> goTo(current+1), 4000);
+    carousel.addEventListener('mouseenter', ()=> clearInterval(autoplay));
+    carousel.addEventListener('mouseleave', ()=> autoplay = setInterval(()=> goTo(current+1), 4000));
+
+    // touch support
+    let startX = 0;
+    track.addEventListener('touchstart', e=> startX = e.touches[0].clientX, {passive:true});
+    track.addEventListener('touchend', e=>{
+      const endX = e.changedTouches[0].clientX;
+      if(startX - endX > 30) goTo(current+1);
+      if(endX - startX > 30) goTo(current-1);
+    });
+
+    // ensure initial layout
+    update();
+    window.addEventListener('resize', update);
+  })();
+</script>
+</body>
+</html>

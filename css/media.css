@@ -1,0 +1,80 @@
+/* media.css — responsive & adjustable rules for CHICKENARIUM login */
+:root{
+  --scale: 1;
+}
+/* Base accessibility scaling (affects rem-based sizes) */
+html{font-size:calc(16px * var(--scale));}
+
+/* small devices: make inputs larger and stack more tightly */
+@media (max-width:480px){
+  :root{--scale:0.95}
+  .page{padding:18px}
+  .card{padding:18px;border-radius:12px}
+  .chicken-svg{width:64px;height:52px}
+  .brand h1{font-size:1.15rem}
+  .login-form input{padding:14px}
+  .btn{padding:12px 14px;border-radius:10px}
+  .decor{gap:8px}
+}
+
+/* medium devices */
+@media (min-width:481px) and (max-width:880px){
+  :root{--scale:0.98}
+  .card{width:90%}
+}
+
+/* larger devices - slight upscale */
+@media (min-width:881px){
+  :root{--scale:1}
+  .card{width:420px}
+}
+
+/* landscape phones: make form centered and comfortable */
+@media (orientation:landscape) and (max-width:760px){
+  .page{align-items:center;padding:12px}
+  .card{padding:20px}
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce){
+  .card.shake{animation:none}
+}
+
+/* Utility: helper class to increase overall scale if user wants larger UI */
+.scale-large{--scale:1.12}
+.scale-medium{--scale:1.06}
+.scale-small{--scale:0.90}
+
+/* css/media.css */
+
+/* TABLET */
+@media (max-width:880px){
+  .hero{flex-direction:column;align-items:flex-start}
+  .hero-right{width:100%;display:flex;justify-content:flex-start}
+  .carousel-slide img{height:180px}
+}
+
+/* MOBILE */
+@media (max-width:640px){
+  .nav-links{display:none}
+  .menu-btn{display:inline-block}
+  
+  .nav-links.open{
+    display:flex;
+    position:absolute;
+    right:16px;
+    top:56px;
+    background:var(--card);
+    padding:10px;
+    border-radius:10px;
+    box-shadow:0 12px 30px rgba(20,10,0,0.08);
+    flex-direction:column
+  }
+  .hero-right{order:2}
+}
+
+/* SMALL MOBILE */
+@media (max-width:480px){
+  .carousel-slide img{height:140px}
+  .carousel-btn{width:30px;height:30px}
+}
